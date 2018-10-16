@@ -46,3 +46,9 @@ Then /I should see all the movies/ do
   # Make sure that all the movies in the app are visible in the table
   page.all('#movies tbody tr').count.should == Movie.count
 end
+
+Then /^the director of "(.+)" should be "(.+)"$/ do |movie, name|
+  movie = Movie.where(:title => movie).first
+  (movie.director != name) ? fail : nil
+end
+  
