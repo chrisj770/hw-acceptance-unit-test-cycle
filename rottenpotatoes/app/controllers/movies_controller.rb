@@ -60,5 +60,26 @@ class MoviesController < ApplicationController
     flash[:notice] = "Movie '#{@movie.title}' deleted."
     redirect_to movies_path
   end
+  
+  def similar 
+    @id = params[:id]
+    
+    # Get director information for the current movie
+    @selected_movie = Movie.find(params[:id])
+    @director = @selected_movie.director
+    if @director.nil? || @director.empty?
+      flash[:notice] = "'#{@selected_movie.title}' has no director info"
+      redirect_to movies_path
+    end
+    
+    # Find movies that match the director (if info exists)
+    @movies = Movie.where(director: @director).order({:title => :asc})
+    if @movies.nil?
+      # It shouldn't get here. The movie itself has its own director XD
+      @movies = Movie.none 
+    end
+    
+    # Render similar template
+  end 
 
 end
