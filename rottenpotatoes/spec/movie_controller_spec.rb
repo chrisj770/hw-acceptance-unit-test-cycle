@@ -16,45 +16,72 @@ describe MoviesController do
       @newMovie4.save
     end 
   
-    it "should get movies page" do
+    it "should get the main movies page" do
       get "/movies"
       expect(response).to render_template(:index)
-      expect(assigns(:all_ratings)).to eq(Movie.all_ratings)
+      expect(assigns(:all_ratings)).to eq(Movie.all_ratings) 
     end
+    
+    it "should redirect to /movies from the root" do 
+      get "/"
+      expect(response).to redirect_to("/movies")
+    end 
     
     it "should get a sorted movies page" do 
       get "/movies", :params => {:sort => "title"}
       expect(response).to render_template(:index)
       
-      get "/movies", :params => {:sort => "title"}
+      get "/movies", :params => {:sort => "release_date"}
       expect(response).to render_template(:index)
-      
     end 
     
-    
-    it "should get movies page with proper params" do 
+    it "should show a certain movie's page" do 
       get "/movies/1"
       expect(response).to render_template(:show)
-      
     end 
     
-    it "should get a new movies page when requested" do 
+    it "should show movies of selected ratings" do 
+      get "/movies", :params => {:ratings => ['NC-17']}
+      expect(response).to render_template(:index)
+      expect(assigns(:selected_ratings)).to include('NC-17')
+    end 
+    
+    it "should render a similar directors page" do
+      get "/movies/1/director"
+      expect(response).to render_template(:similar)
+    end 
+    
+
+    
+    #CRUD
+    it "should show a new movie page" do 
       get "/movies/new"
       expect(response).to render_template(:new)
     end
     
-    it "should get an edit-movie page" do 
+    it "should create movies" do 
+      post "/movies", :movie => {:title => "Simpsons"} 
+      expect(Movie.where(:title => "Simpsons")).to_not be_empty 
+    end
+    
+    it "should get an edit movie page" do 
       get "/movies/1/edit"
       expect(response).to render_template(:edit)
     end
     
+    it "should update a movie" do 
+      put "/movies/1", :movie => {:title => "The LEGO Movie"}
+      expect(Movie.where(:title=>"The LEGO Movie")).to_not be_empty
+    end
     
-    it "should respond to parameters" do 
-      get "/movies", :params => {:ratings => ['NC-17']}
-      expect(response).to render_template(:index)
-      
-    end 
-
+    it "should destroy a movie" do 
+      post "/movies", :movie => {:title => "Simpsons"} 
+      query = Movie.where(:title => "Simpsons")
+      expect(query).to_not be_empty
+      number = query.first.id
+      delete "/movies/#{number}"
+      expect(Movie.where(:title => "Simpsons")).to be_empty
+    end
     
   end
 end
