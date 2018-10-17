@@ -73,7 +73,7 @@ class MoviesController < ApplicationController
     end
     
     # Find movies that match the director (if info exists)
-    @movies = Movie.where(director: @director).order({:title => :asc})
+    @movies = @selected_movie.find_similar()
     if @movies.nil?
       # It shouldn't get here. The movie itself has its own director XD
       @movies = Movie.none 
