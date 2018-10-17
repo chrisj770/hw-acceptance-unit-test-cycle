@@ -4,6 +4,9 @@ class Movie < ActiveRecord::Base
   end
   
   def find_similar
+    if self.director.nil? || self.director.empty?
+      return nil
+    end
     Movie.where(director: self.director).order({:title => :asc})
   end
     

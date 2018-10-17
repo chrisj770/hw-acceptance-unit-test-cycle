@@ -66,17 +66,13 @@ class MoviesController < ApplicationController
     
     # Get director information for the current movie
     @selected_movie = Movie.find(params[:id])
-    @director = @selected_movie.director
-    if @director.nil? || @director.empty?
-      flash[:notice] = "'#{@selected_movie.title}' has no director info"
-      redirect_to movies_path
-    end
+    @director = @selected_movie.director    
     
     # Find movies that match the director (if info exists)
     @movies = @selected_movie.find_similar()
     if @movies.nil?
-      # It shouldn't get here. The movie itself has its own director XD
-      @movies = Movie.none 
+      flash[:notice] = "'#{@selected_movie.title}' has no director info"
+      redirect_to movies_path
     end
     
     # Render similar template
