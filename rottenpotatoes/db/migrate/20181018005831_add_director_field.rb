@@ -1,4 +1,4 @@
-class AddDirector < ActiveRecord::Migration
+class AddDirectorField < ActiveRecord::Migration
   def change
     add_column :movies, :director, :string
   end
