@@ -22728,3 +22728,7 @@ Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
   [1m[36mSQL (0.1ms)[0m  [1mUPDATE "movies" SET "title" = ?, "rating" = ?, "release_date" = ?, "director" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["title", "The Incredibles"], ["rating", "PG"], ["release_date", "2004-10-18 01:40:58.013278"], ["director", "Brad Bird"], ["updated_at", "2018-10-18 01:40:58.013601"], ["id", 5]]
   [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
   [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
