@@ -18883,3 +18883,512 @@ Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
   [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
   [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "The Sixth Sense"], ["rating", "R"], ["release_date", "2008-10-18 00:32:54.875825"], ["created_at", "2018-10-18 00:32:54.877695"], ["updated_at", "2018-10-18 00:32:54.877695"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "movies" SET "director" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["director", "James Cameron"], ["updated_at", "2018-10-18 00:32:54.879415"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "The Sixth Sense"], ["rating", "R"], ["release_date", "2008-10-18 00:32:54.883369"], ["created_at", "2018-10-18 00:32:54.883717"], ["updated_at", "2018-10-18 00:32:54.883717"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Indiana Jones: Raiders of the Lost Ark"], ["rating", "PG"], ["release_date", "1968-10-18 00:32:54.885239"], ["director", "Steven Spielberg"], ["created_at", "2018-10-18 00:32:54.885532"], ["updated_at", "2018-10-18 00:32:54.885532"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Indiana Jones and the Temple of Doom"], ["rating", "PG"], ["release_date", "1978-10-18 00:32:54.887011"], ["director", "Steven Spielberg"], ["created_at", "2018-10-18 00:32:54.887345"], ["updated_at", "2018-10-18 00:32:54.887345"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "The Incredibles"], ["rating", "PG"], ["release_date", "2004-10-18 00:32:54.888767"], ["director", "Brad Bird"], ["created_at", "2018-10-18 00:32:54.889057"], ["updated_at", "2018-10-18 00:32:54.889057"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/movies" for 127.0.0.1 at 2018-10-18 00:32:54 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (5.0ms)
+Completed 200 OK in 140ms (Views: 132.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Sixth Sense"], ["rating", "R"], ["release_date", "2008-10-18 00:32:55.042691"], ["created_at", "2018-10-18 00:32:55.043122"], ["updated_at", "2018-10-18 00:32:55.043122"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "movies" SET "director" = ?, "updated_at" = ? WHERE "movies"."id" = ?  [["director", "James Cameron"], ["updated_at", "2018-10-18 00:32:55.044472"], ["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Sixth Sense"], ["rating", "R"], ["release_date", "2008-10-18 00:32:55.045588"], ["created_at", "2018-10-18 00:32:55.045883"], ["updated_at", "2018-10-18 00:32:55.045883"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Indiana Jones: Raiders of the Lost Ark"], ["rating", "PG"], ["release_date", "1968-10-18 00:32:55.047420"], ["director", "Steven Spielberg"], ["created_at", "2018-10-18 00:32:55.047752"], ["updated_at", "2018-10-18 00:32:55.047752"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Indiana Jones and the Temple of Doom"], ["rating", "PG"], ["release_date", "1978-10-18 00:32:55.049165"], ["director", "Steven Spielberg"], ["created_at", "2018-10-18 00:32:55.049455"], ["updated_at", "2018-10-18 00:32:55.049455"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Incredibles"], ["rating", "PG"], ["release_date", "2004-10-18 00:32:55.050814"], ["director", "Brad Bird"], ["created_at", "2018-10-18 00:32:55.051112"], ["updated_at", "2018-10-18 00:32:55.051112"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2018-10-18 00:32:55 +0000
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Sixth Sense"], ["rating", "R"], ["release_date", "2008-10-18 00:32:55.056962"], ["created_at", "2018-10-18 00:32:55.057289"], ["updated_at", "2018-10-18 00:32:55.057289"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "movies" SET "director" = ?, "updated_at" = ? WHERE "movies"."id" = ?  [["director", "James Cameron"], ["updated_at", "2018-10-18 00:32:55.058389"], ["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Sixth Sense"], ["rating", "R"], ["release_date", "2008-10-18 00:32:55.059401"], ["created_at", "2018-10-18 00:32:55.059673"], ["updated_at", "2018-10-18 00:32:55.059673"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Indiana Jones: Raiders of the Lost Ark"], ["rating", "PG"], ["release_date", "1968-10-18 00:32:55.061015"], ["director", "Steven Spielberg"], ["created_at", "2018-10-18 00:32:55.061304"], ["updated_at", "2018-10-18 00:32:55.061304"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Indiana Jones and the Temple of Doom"], ["rating", "PG"], ["release_date", "1978-10-18 00:32:55.062629"], ["director", "Steven Spielberg"], ["created_at", "2018-10-18 00:32:55.062925"], ["updated_at", "2018-10-18 00:32:55.062925"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Incredibles"], ["rating", "PG"], ["release_date", "2004-10-18 00:32:55.064310"], ["director", "Brad Bird"], ["created_at", "2018-10-18 00:32:55.064606"], ["updated_at", "2018-10-18 00:32:55.064606"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/movies?params[sort]=title" for 127.0.0.1 at 2018-10-18 00:32:55 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"params"=>{"sort"=>"title"}}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.1ms)
+Started GET "/movies?params[sort]=release_date" for 127.0.0.1 at 2018-10-18 00:32:55 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"params"=>{"sort"=>"release_date"}}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Sixth Sense"], ["rating", "R"], ["release_date", "2008-10-18 00:32:55.078551"], ["created_at", "2018-10-18 00:32:55.078853"], ["updated_at", "2018-10-18 00:32:55.078853"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "movies" SET "director" = ?, "updated_at" = ? WHERE "movies"."id" = ?  [["director", "James Cameron"], ["updated_at", "2018-10-18 00:32:55.080008"], ["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Sixth Sense"], ["rating", "R"], ["release_date", "2008-10-18 00:32:55.081001"], ["created_at", "2018-10-18 00:32:55.081301"], ["updated_at", "2018-10-18 00:32:55.081301"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Indiana Jones: Raiders of the Lost Ark"], ["rating", "PG"], ["release_date", "1968-10-18 00:32:55.082629"], ["director", "Steven Spielberg"], ["created_at", "2018-10-18 00:32:55.082951"], ["updated_at", "2018-10-18 00:32:55.082951"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Indiana Jones and the Temple of Doom"], ["rating", "PG"], ["release_date", "1978-10-18 00:32:55.084328"], ["director", "Steven Spielberg"], ["created_at", "2018-10-18 00:32:55.084621"], ["updated_at", "2018-10-18 00:32:55.084621"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Incredibles"], ["rating", "PG"], ["release_date", "2004-10-18 00:32:55.085975"], ["director", "Brad Bird"], ["created_at", "2018-10-18 00:32:55.086269"], ["updated_at", "2018-10-18 00:32:55.086269"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/movies/1" for 127.0.0.1 at 2018-10-18 00:32:55 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered movies/show.html.haml within layouts/application (2.1ms)
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "The Sixth Sense"], ["rating", "R"], ["release_date", "2008-10-18 00:32:55.098193"], ["created_at", "2018-10-18 00:32:55.098536"], ["updated_at", "2018-10-18 00:32:55.098536"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "movies" SET "director" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["director", "James Cameron"], ["updated_at", "2018-10-18 00:32:55.099757"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "The Sixth Sense"], ["rating", "R"], ["release_date", "2008-10-18 00:32:55.100759"], ["created_at", "2018-10-18 00:32:55.101048"], ["updated_at", "2018-10-18 00:32:55.101048"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Indiana Jones: Raiders of the Lost Ark"], ["rating", "PG"], ["release_date", "1968-10-18 00:32:55.102403"], ["director", "Steven Spielberg"], ["created_at", "2018-10-18 00:32:55.102707"], ["updated_at", "2018-10-18 00:32:55.102707"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Indiana Jones and the Temple of Doom"], ["rating", "PG"], ["release_date", "1978-10-18 00:32:55.104077"], ["director", "Steven Spielberg"], ["created_at", "2018-10-18 00:32:55.104370"], ["updated_at", "2018-10-18 00:32:55.104370"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "The Incredibles"], ["rating", "PG"], ["release_date", "2004-10-18 00:32:55.105656"], ["director", "Brad Bird"], ["created_at", "2018-10-18 00:32:55.105953"], ["updated_at", "2018-10-18 00:32:55.105953"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/movies?params[ratings][]=NC-17" for 127.0.0.1 at 2018-10-18 00:32:55 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"params"=>{"ratings"=>["NC-17"]}}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Sixth Sense"], ["rating", "R"], ["release_date", "2008-10-18 00:32:55.116702"], ["created_at", "2018-10-18 00:32:55.117019"], ["updated_at", "2018-10-18 00:32:55.117019"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "movies" SET "director" = ?, "updated_at" = ? WHERE "movies"."id" = ?  [["director", "James Cameron"], ["updated_at", "2018-10-18 00:32:55.118192"], ["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Sixth Sense"], ["rating", "R"], ["release_date", "2008-10-18 00:32:55.119267"], ["created_at", "2018-10-18 00:32:55.119623"], ["updated_at", "2018-10-18 00:32:55.119623"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Indiana Jones: Raiders of the Lost Ark"], ["rating", "PG"], ["release_date", "1968-10-18 00:32:55.121019"], ["director", "Steven Spielberg"], ["created_at", "2018-10-18 00:32:55.121312"], ["updated_at", "2018-10-18 00:32:55.121312"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Indiana Jones and the Temple of Doom"], ["rating", "PG"], ["release_date", "1978-10-18 00:32:55.122761"], ["director", "Steven Spielberg"], ["created_at", "2018-10-18 00:32:55.123090"], ["updated_at", "2018-10-18 00:32:55.123090"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Incredibles"], ["rating", "PG"], ["release_date", "2004-10-18 00:32:55.124696"], ["director", "Brad Bird"], ["created_at", "2018-10-18 00:32:55.125016"], ["updated_at", "2018-10-18 00:32:55.125016"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/movies/1/director" for 127.0.0.1 at 2018-10-18 00:32:55 +0000
+Processing by MoviesController#similar as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (0.0ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."director" = ?  ORDER BY "movies"."title" ASC[0m  [["director", "James Cameron"]]
+  Rendered movies/similar.html.haml within layouts/application (3.1ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Sixth Sense"], ["rating", "R"], ["release_date", "2008-10-18 00:32:55.137507"], ["created_at", "2018-10-18 00:32:55.137869"], ["updated_at", "2018-10-18 00:32:55.137869"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "movies" SET "director" = ?, "updated_at" = ? WHERE "movies"."id" = ?  [["director", "James Cameron"], ["updated_at", "2018-10-18 00:32:55.139139"], ["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Sixth Sense"], ["rating", "R"], ["release_date", "2008-10-18 00:32:55.140271"], ["created_at", "2018-10-18 00:32:55.140572"], ["updated_at", "2018-10-18 00:32:55.140572"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Indiana Jones: Raiders of the Lost Ark"], ["rating", "PG"], ["release_date", "1968-10-18 00:32:55.142106"], ["director", "Steven Spielberg"], ["created_at", "2018-10-18 00:32:55.142416"], ["updated_at", "2018-10-18 00:32:55.142416"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Indiana Jones and the Temple of Doom"], ["rating", "PG"], ["release_date", "1978-10-18 00:32:55.143856"], ["director", "Steven Spielberg"], ["created_at", "2018-10-18 00:32:55.144184"], ["updated_at", "2018-10-18 00:32:55.144184"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Incredibles"], ["rating", "PG"], ["release_date", "2004-10-18 00:32:55.145660"], ["director", "Brad Bird"], ["created_at", "2018-10-18 00:32:55.145986"], ["updated_at", "2018-10-18 00:32:55.145986"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/movies/new" for 127.0.0.1 at 2018-10-18 00:32:55 +0000
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (10.2ms)
+Completed 200 OK in 12ms (Views: 12.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Sixth Sense"], ["rating", "R"], ["release_date", "2008-10-18 00:32:55.165172"], ["created_at", "2018-10-18 00:32:55.165525"], ["updated_at", "2018-10-18 00:32:55.165525"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "movies" SET "director" = ?, "updated_at" = ? WHERE "movies"."id" = ?  [["director", "James Cameron"], ["updated_at", "2018-10-18 00:32:55.166741"], ["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Sixth Sense"], ["rating", "R"], ["release_date", "2008-10-18 00:32:55.167795"], ["created_at", "2018-10-18 00:32:55.168083"], ["updated_at", "2018-10-18 00:32:55.168083"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Indiana Jones: Raiders of the Lost Ark"], ["rating", "PG"], ["release_date", "1968-10-18 00:32:55.169402"], ["director", "Steven Spielberg"], ["created_at", "2018-10-18 00:32:55.169686"], ["updated_at", "2018-10-18 00:32:55.169686"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Indiana Jones and the Temple of Doom"], ["rating", "PG"], ["release_date", "1978-10-18 00:32:55.171012"], ["director", "Steven Spielberg"], ["created_at", "2018-10-18 00:32:55.171341"], ["updated_at", "2018-10-18 00:32:55.171341"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Incredibles"], ["rating", "PG"], ["release_date", "2004-10-18 00:32:55.172693"], ["director", "Brad Bird"], ["created_at", "2018-10-18 00:32:55.172980"], ["updated_at", "2018-10-18 00:32:55.172980"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/movies" for 127.0.0.1 at 2018-10-18 00:32:55 +0000
+Processing by MoviesController#create as HTML
+  Parameters: {"movie"=>{"title"=>"Simpsons"}}
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Simpsons"], ["created_at", "2018-10-18 00:32:55.177008"], ["updated_at", "2018-10-18 00:32:55.177008"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/movies
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "movies" WHERE "movies"."title" = ?[0m  [["title", "Simpsons"]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Sixth Sense"], ["rating", "R"], ["release_date", "2008-10-18 00:32:55.181970"], ["created_at", "2018-10-18 00:32:55.182288"], ["updated_at", "2018-10-18 00:32:55.182288"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "movies" SET "director" = ?, "updated_at" = ? WHERE "movies"."id" = ?  [["director", "James Cameron"], ["updated_at", "2018-10-18 00:32:55.183464"], ["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Sixth Sense"], ["rating", "R"], ["release_date", "2008-10-18 00:32:55.184475"], ["created_at", "2018-10-18 00:32:55.184761"], ["updated_at", "2018-10-18 00:32:55.184761"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Indiana Jones: Raiders of the Lost Ark"], ["rating", "PG"], ["release_date", "1968-10-18 00:32:55.186079"], ["director", "Steven Spielberg"], ["created_at", "2018-10-18 00:32:55.186398"], ["updated_at", "2018-10-18 00:32:55.186398"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Indiana Jones and the Temple of Doom"], ["rating", "PG"], ["release_date", "1978-10-18 00:32:55.187756"], ["director", "Steven Spielberg"], ["created_at", "2018-10-18 00:32:55.188055"], ["updated_at", "2018-10-18 00:32:55.188055"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Incredibles"], ["rating", "PG"], ["release_date", "2004-10-18 00:32:55.189369"], ["director", "Brad Bird"], ["created_at", "2018-10-18 00:32:55.189676"], ["updated_at", "2018-10-18 00:32:55.189676"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/movies/1/edit" for 127.0.0.1 at 2018-10-18 00:32:55 +0000
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (0.0ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered movies/edit.html.haml within layouts/application (2.8ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "The Sixth Sense"], ["rating", "R"], ["release_date", "2008-10-18 00:32:55.201054"], ["created_at", "2018-10-18 00:32:55.201394"], ["updated_at", "2018-10-18 00:32:55.201394"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "movies" SET "director" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["director", "James Cameron"], ["updated_at", "2018-10-18 00:32:55.202553"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "The Sixth Sense"], ["rating", "R"], ["release_date", "2008-10-18 00:32:55.203601"], ["created_at", "2018-10-18 00:32:55.203895"], ["updated_at", "2018-10-18 00:32:55.203895"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Indiana Jones: Raiders of the Lost Ark"], ["rating", "PG"], ["release_date", "1968-10-18 00:32:55.205196"], ["director", "Steven Spielberg"], ["created_at", "2018-10-18 00:32:55.205483"], ["updated_at", "2018-10-18 00:32:55.205483"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Indiana Jones and the Temple of Doom"], ["rating", "PG"], ["release_date", "1978-10-18 00:32:55.206792"], ["director", "Steven Spielberg"], ["created_at", "2018-10-18 00:32:55.207129"], ["updated_at", "2018-10-18 00:32:55.207129"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "The Incredibles"], ["rating", "PG"], ["release_date", "2004-10-18 00:32:55.208434"], ["director", "Brad Bird"], ["created_at", "2018-10-18 00:32:55.208711"], ["updated_at", "2018-10-18 00:32:55.208711"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started PUT "/movies/1" for 127.0.0.1 at 2018-10-18 00:32:55 +0000
+Processing by MoviesController#update as HTML
+  Parameters: {"movie"=>{"title"=>"The LEGO Movie"}, "id"=>"1"}
+  [1m[36mMovie Load (0.0ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "movies" SET "title" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["title", "The LEGO Movie"], ["updated_at", "2018-10-18 00:32:55.213370"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/movies/1
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "movies" WHERE "movies"."title" = ?[0m  [["title", "The LEGO Movie"]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Sixth Sense"], ["rating", "R"], ["release_date", "2008-10-18 00:32:55.218283"], ["created_at", "2018-10-18 00:32:55.218613"], ["updated_at", "2018-10-18 00:32:55.218613"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "movies" SET "director" = ?, "updated_at" = ? WHERE "movies"."id" = ?  [["director", "James Cameron"], ["updated_at", "2018-10-18 00:32:55.219960"], ["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Sixth Sense"], ["rating", "R"], ["release_date", "2008-10-18 00:32:55.221249"], ["created_at", "2018-10-18 00:32:55.221539"], ["updated_at", "2018-10-18 00:32:55.221539"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Indiana Jones: Raiders of the Lost Ark"], ["rating", "PG"], ["release_date", "1968-10-18 00:32:55.222950"], ["director", "Steven Spielberg"], ["created_at", "2018-10-18 00:32:55.223290"], ["updated_at", "2018-10-18 00:32:55.223290"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Indiana Jones and the Temple of Doom"], ["rating", "PG"], ["release_date", "1978-10-18 00:32:55.224804"], ["director", "Steven Spielberg"], ["created_at", "2018-10-18 00:32:55.225135"], ["updated_at", "2018-10-18 00:32:55.225135"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Incredibles"], ["rating", "PG"], ["release_date", "2004-10-18 00:32:55.226659"], ["director", "Brad Bird"], ["created_at", "2018-10-18 00:32:55.226983"], ["updated_at", "2018-10-18 00:32:55.226983"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/movies" for 127.0.0.1 at 2018-10-18 00:32:55 +0000
+Processing by MoviesController#create as HTML
+  Parameters: {"movie"=>{"title"=>"Simpsons"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Simpsons"], ["created_at", "2018-10-18 00:32:55.231445"], ["updated_at", "2018-10-18 00:32:55.231445"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/movies
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "movies" WHERE "movies"."title" = ?[0m  [["title", "Simpsons"]]
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."title" = ?  ORDER BY "movies"."id" ASC LIMIT 1  [["title", "Simpsons"]]
+Started DELETE "/movies/6" for 127.0.0.1 at 2018-10-18 00:32:55 +0000
+Processing by MoviesController#destroy as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mMovie Load (0.0ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 6]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/movies
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "movies" WHERE "movies"."title" = ?[0m  [["title", "Simpsons"]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Sixth Sense"], ["rating", "R"], ["release_date", "2008-10-18 00:32:55.239683"], ["created_at", "2018-10-18 00:32:55.239996"], ["updated_at", "2018-10-18 00:32:55.239996"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "movies" SET "director" = ?, "updated_at" = ? WHERE "movies"."id" = ?  [["director", "James Cameron"], ["updated_at", "2018-10-18 00:32:55.241125"], ["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Sixth Sense"], ["rating", "R"], ["release_date", "2008-10-18 00:32:55.242124"], ["created_at", "2018-10-18 00:32:55.242420"], ["updated_at", "2018-10-18 00:32:55.242420"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Indiana Jones: Raiders of the Lost Ark"], ["rating", "PG"], ["release_date", "1968-10-18 00:32:55.243771"], ["director", "Steven Spielberg"], ["created_at", "2018-10-18 00:32:55.244064"], ["updated_at", "2018-10-18 00:32:55.244064"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Indiana Jones and the Temple of Doom"], ["rating", "PG"], ["release_date", "1978-10-18 00:32:55.245366"], ["director", "Steven Spielberg"], ["created_at", "2018-10-18 00:32:55.245649"], ["updated_at", "2018-10-18 00:32:55.245649"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Incredibles"], ["rating", "PG"], ["release_date", "2004-10-18 00:32:55.247009"], ["director", "Brad Bird"], ["created_at", "2018-10-18 00:32:55.247319"], ["updated_at", "2018-10-18 00:32:55.247319"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Sixth Sense"], ["rating", "R"], ["release_date", "2008-10-18 00:32:55.250549"], ["created_at", "2018-10-18 00:32:55.250846"], ["updated_at", "2018-10-18 00:32:55.250846"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "movies" SET "director" = ?, "updated_at" = ? WHERE "movies"."id" = ?  [["director", "James Cameron"], ["updated_at", "2018-10-18 00:32:55.251995"], ["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Sixth Sense"], ["rating", "R"], ["release_date", "2008-10-18 00:32:55.253063"], ["created_at", "2018-10-18 00:32:55.253384"], ["updated_at", "2018-10-18 00:32:55.253384"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Indiana Jones: Raiders of the Lost Ark"], ["rating", "PG"], ["release_date", "1968-10-18 00:32:55.254904"], ["director", "Steven Spielberg"], ["created_at", "2018-10-18 00:32:55.255255"], ["updated_at", "2018-10-18 00:32:55.255255"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Indiana Jones and the Temple of Doom"], ["rating", "PG"], ["release_date", "1978-10-18 00:32:55.256910"], ["director", "Steven Spielberg"], ["created_at", "2018-10-18 00:32:55.257263"], ["updated_at", "2018-10-18 00:32:55.257263"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Incredibles"], ["rating", "PG"], ["release_date", "2004-10-18 00:32:55.258913"], ["director", "Brad Bird"], ["created_at", "2018-10-18 00:32:55.259261"], ["updated_at", "2018-10-18 00:32:55.259261"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."director" = ?  ORDER BY "movies"."title" ASC  [["director", "Brad Bird"]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "The Sixth Sense"], ["rating", "R"], ["release_date", "2008-10-18 00:32:55.263402"], ["created_at", "2018-10-18 00:32:55.263758"], ["updated_at", "2018-10-18 00:32:55.263758"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "movies" SET "director" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["director", "James Cameron"], ["updated_at", "2018-10-18 00:32:55.280128"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "The Sixth Sense"], ["rating", "R"], ["release_date", "2008-10-18 00:32:55.281302"], ["created_at", "2018-10-18 00:32:55.281655"], ["updated_at", "2018-10-18 00:32:55.281655"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Indiana Jones: Raiders of the Lost Ark"], ["rating", "PG"], ["release_date", "1968-10-18 00:32:55.283179"], ["director", "Steven Spielberg"], ["created_at", "2018-10-18 00:32:55.283556"], ["updated_at", "2018-10-18 00:32:55.283556"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Indiana Jones and the Temple of Doom"], ["rating", "PG"], ["release_date", "1978-10-18 00:32:55.285204"], ["director", "Steven Spielberg"], ["created_at", "2018-10-18 00:32:55.285589"], ["updated_at", "2018-10-18 00:32:55.285589"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "The Incredibles"], ["rating", "PG"], ["release_date", "2004-10-18 00:32:55.287065"], ["director", "Brad Bird"], ["created_at", "2018-10-18 00:32:55.287389"], ["updated_at", "2018-10-18 00:32:55.287389"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."director" = ?  ORDER BY "movies"."title" ASC[0m  [["director", "Steven Spielberg"]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Sixth Sense"], ["rating", "R"], ["release_date", "2008-10-18 00:32:55.291769"], ["created_at", "2018-10-18 00:32:55.292075"], ["updated_at", "2018-10-18 00:32:55.292075"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "movies" SET "director" = ?, "updated_at" = ? WHERE "movies"."id" = ?  [["director", "James Cameron"], ["updated_at", "2018-10-18 00:32:55.293182"], ["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Sixth Sense"], ["rating", "R"], ["release_date", "2008-10-18 00:32:55.294144"], ["created_at", "2018-10-18 00:32:55.294411"], ["updated_at", "2018-10-18 00:32:55.294411"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Indiana Jones: Raiders of the Lost Ark"], ["rating", "PG"], ["release_date", "1968-10-18 00:32:55.295804"], ["director", "Steven Spielberg"], ["created_at", "2018-10-18 00:32:55.296092"], ["updated_at", "2018-10-18 00:32:55.296092"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Indiana Jones and the Temple of Doom"], ["rating", "PG"], ["release_date", "1978-10-18 00:32:55.297539"], ["director", "Steven Spielberg"], ["created_at", "2018-10-18 00:32:55.297827"], ["updated_at", "2018-10-18 00:32:55.297827"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Incredibles"], ["rating", "PG"], ["release_date", "2004-10-18 00:32:55.299192"], ["director", "Brad Bird"], ["created_at", "2018-10-18 00:32:55.299555"], ["updated_at", "2018-10-18 00:32:55.299555"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction

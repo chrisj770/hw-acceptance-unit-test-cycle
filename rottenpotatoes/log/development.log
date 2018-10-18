@@ -3385,3 +3385,143 @@ Processing by MoviesController#edit as HTML
   [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered movies/edit.html.haml within layouts/application (4.5ms)
 Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 192.195.154.123 at 2018-10-17 23:29:48 +0000
+
+
+Started GET "/movies" for 192.195.154.123 at 2018-10-17 23:29:49 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (12.8ms)
+Completed 200 OK in 189ms (Views: 162.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BNC-17%5D=1&ratings%5BR%5D=1&commit=Refresh" for 192.195.154.123 at 2018-10-17 23:29:54 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "NC-17"=>"1", "R"=>"1"}, "commit"=>"Refresh"}
+Redirected to http://cotton-cargo-3001.codio.io/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 192.195.154.123 at 2018-10-17 23:29:54 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')
+  Rendered movies/index.html.haml within layouts/application (2.1ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BNC-17%5D=1&commit=Refresh" for 192.195.154.123 at 2018-10-17 23:29:56 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "NC-17"=>"1"}, "commit"=>"Refresh"}
+Redirected to http://cotton-cargo-3001.codio.io/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1" for 192.195.154.123 at 2018-10-17 23:29:56 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1"}}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13')[0m
+  Rendered movies/index.html.haml within layouts/application (2.1ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&commit=Refresh" for 192.195.154.123 at 2018-10-17 23:29:57 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1"}, "commit"=>"Refresh"}
+Redirected to http://cotton-cargo-3001.codio.io/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1" for 192.195.154.123 at 2018-10-17 23:29:57 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1"}}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13')
+  Rendered movies/index.html.haml within layouts/application (2.0ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/3" for 192.195.154.123 at 2018-10-17 23:29:59 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered movies/show.html.haml within layouts/application (2.2ms)
+Completed 200 OK in 20ms (Views: 17.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies" for 192.195.154.123 at 2018-10-17 23:30:01 +0000
+Processing by MoviesController#index as HTML
+Redirected to http://cotton-cargo-3001.codio.io/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1" for 192.195.154.123 at 2018-10-17 23:30:01 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1"}}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13')
+  Rendered movies/index.html.haml within layouts/application (2.0ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/new" for 192.195.154.123 at 2018-10-17 23:30:02 +0000
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (14.8ms)
+Completed 200 OK in 24ms (Views: 24.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies" for 192.195.154.123 at 2018-10-17 23:30:03 +0000
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NubnltE9lFE2hdq1iBV1/aePUpK77JbugGAZGWLg8WZzlAGNpI1+ohKmNru8nkM9mg98I7N6NZ4+rKShHjBLxw==", "movie"=>{"title"=>"", "rating"=>"G", "release_date(1i)"=>"2018", "release_date(2i)"=>"10", "release_date(3i)"=>"17", "director"=>""}, "commit"=>"Save Changes"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (5.7ms)[0m  INSERT INTO "movies" ("title", "rating", "director", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", ""], ["rating", "G"], ["director", ""], ["release_date", "2018-10-17 00:00:00.000000"], ["created_at", "2018-10-17 23:30:03.915747"], ["updated_at", "2018-10-17 23:30:03.915747"]]
+  [1m[36m (82.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://cotton-cargo-3001.codio.io/movies
+Completed 302 Found in 92ms (ActiveRecord: 87.8ms)
+
+
+Started GET "/movies" for 192.195.154.123 at 2018-10-17 23:30:04 +0000
+Processing by MoviesController#index as HTML
+Redirected to http://cotton-cargo-3001.codio.io/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1" for 192.195.154.123 at 2018-10-17 23:30:04 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1"}}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13')
+  Rendered movies/index.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/4" for 192.195.154.123 at 2018-10-17 23:30:06 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered movies/show.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/movies/4" for 192.195.154.123 at 2018-10-17 23:30:08 +0000
+Processing by MoviesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"sFF85tFhGhaFEI6oMYgpxkIA0jeum/m6NREzIGeImbT1I5r9pNHw5aEzYqYFAx8Gf4D8hqYNWsqL3Y6YG1gjFQ==", "id"=>"4"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "movies" WHERE "movies"."id" = ?  [["id", 4]]
+  [1m[36m (104.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://cotton-cargo-3001.codio.io/movies
+Completed 302 Found in 106ms (ActiveRecord: 104.6ms)
+
+
+Started GET "/movies" for 192.195.154.123 at 2018-10-17 23:30:09 +0000
+Processing by MoviesController#index as HTML
+Redirected to http://cotton-cargo-3001.codio.io/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1" for 192.195.154.123 at 2018-10-17 23:30:09 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1"}}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13')
+  Rendered movies/index.html.haml within layouts/application (1.8ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.2ms)
