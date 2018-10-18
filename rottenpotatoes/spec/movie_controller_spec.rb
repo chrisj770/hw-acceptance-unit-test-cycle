@@ -3,16 +3,45 @@ require 'rails_helper'
 describe MoviesController do 
   describe "Page Responses", :type => :request do
     before do
+     
+      #@newMovie = FactoryGirl.create(:movie)
+      #@newMovie.director = "James Cameron"
+      #@newMovie.save
+      #@newMovie1 = FactoryGirl.create(:movie)
+      #@newMovie1.save
+      #@newMovie2 = FactoryGirl.create(:indiana_jones_1)
+      #@newMovie2.save
+      #@newMovie3 = FactoryGirl.create(:indiana_jones_2)
+      #@newMovie3.save
+      #@newMovie4 = FactoryGirl.create(:the_incredibles)
+      #@newMovie4.save
+      
+      
       @newMovie = FactoryGirl.create(:movie)
       @newMovie.director = "James Cameron"
       @newMovie.save
       @newMovie1 = FactoryGirl.create(:movie)
       @newMovie1.save
-      @newMovie2 = FactoryGirl.create(:indiana_jones_1)
+      
+      @newMovie2 = FactoryGirl.create(:movie)
+	    @newMovie2.title = "Indiana Jones: Raiders of the Lost Ark"
+	    @newMovie2.rating = "PG"
+      @newMovie2.release_date = 50.years.ago
+      @newMovie2.director = "Steven Spielberg"
       @newMovie2.save
-      @newMovie3 = FactoryGirl.create(:indiana_jones_2)
+	  
+	    @newMovie3 = FactoryGirl.create(:movie)
+	    @newMovie3.title = "Indiana Jones and the Temple of Doom"
+	    @newMovie3.rating = "PG"
+      @newMovie3.release_date = 40.years.ago
+      @newMovie3.director = "Steven Spielberg"
       @newMovie3.save
-      @newMovie4 = FactoryGirl.create(:the_incredibles)
+	  
+	    @newMovie4 = FactoryGirl.create(:movie)
+	    @newMovie4.title = "The Incredibles"
+	    @newMovie4.rating = "PG"
+      @newMovie4.release_date = 14.years.ago
+      @newMovie4.director = "Brad Bird"
       @newMovie4.save
     end 
   
