@@ -40,11 +40,11 @@ describe MoviesController do
       expect(response).to render_template(:show)
     end 
     
-    it "should show movies of selected ratings" do 
-      get "/movies", :params => {:ratings => ['NC-17']}
-      expect(response).to render_template(:index)
-      expect(assigns(:selected_ratings)).to include('NC-17')
-    end 
+    #it "should show movies of selected ratings" do 
+    #  get "/movies", :params => {:ratings => ['NC-17']}
+    #  expect(response).to render_template(:index)
+    #  expect(assigns(:selected_ratings)).to include('NC-17')
+    #end 
     
     it "should render a similar directors page" do
       get "/movies/1/director"
