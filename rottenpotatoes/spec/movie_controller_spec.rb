@@ -3,19 +3,6 @@ require 'rails_helper'
 describe MoviesController do 
   describe "Page Responses", :type => :request do
     before do
-     
-      #@newMovie = FactoryGirl.create(:movie)
-      #@newMovie.director = "James Cameron"
-      #@newMovie.save
-      #@newMovie1 = FactoryGirl.create(:movie)
-      #@newMovie1.save
-      #@newMovie2 = FactoryGirl.create(:indiana_jones_1)
-      #@newMovie2.save
-      #@newMovie3 = FactoryGirl.create(:indiana_jones_2)
-      #@newMovie3.save
-      #@newMovie4 = FactoryGirl.create(:the_incredibles)
-      #@newMovie4.save
-      
       
       @newMovie = FactoryGirl.create(:movie)
       @newMovie.director = "James Cameron"
@@ -80,6 +67,10 @@ describe MoviesController do
       expect(response).to render_template(:similar)
     end 
     
+    it "should return to main page when no similar directors" do
+      get "/movies/2/director"
+      expect(response).to redirect_to(movies_path)
+    end
 
     
     #CRUD
