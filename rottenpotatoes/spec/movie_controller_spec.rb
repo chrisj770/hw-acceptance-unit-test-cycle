@@ -44,26 +44,29 @@ describe MoviesController do
     end 
     
     it "should get a sorted movies page" do 
-      get "/movies", :params => {:sort => "title"}
-      expect(response).to render_template(:index)
+      get "/movies", {"sort" => "title"}
+      expect(assigns(:title_header)).to eq("hilite")
       
-      get "/movies", :params => {:sort => "release_date"}
-      expect(response).to render_template(:index)
+      get "/movies", {"sort" => "release_date"}
+      expect(assigns(:date_header)).to eq("hilite")
     end 
+    
+    it "should select all ratings if none are selected" do
+      get "/movies", {"ratings" => {}}
+      expect(assigns(:all_ratings)).to eq(Movie.all_ratings)
+    end
     
     it "should show a certain movie's page" do 
       get "/movies/1"
       expect(response).to render_template(:show)
     end 
     
-    #it "should show movies of selected ratings" do 
-    #  get "/movies", :params => {:ratings => ['NC-17']}
-    #  expect(response).to render_template(:index)
-    #  expect(assigns(:selected_ratings)).to include('NC-17')
-    #end 
-    
     it "should render a similar directors page" do
-      get "/movies/1/director"
+      post "/movies", :movie => {:title => "Dark Night", :director => "Christopher Knowlan"} 
+      query = Movie.where(:title => "Dark Night")
+      expect(query).to_not be_empty
+      number = query.first.id
+      get "/movies/#{number}/director"
       expect(response).to render_template(:similar)
     end 
     
@@ -71,7 +74,12 @@ describe MoviesController do
       get "/movies/2/director"
       expect(response).to redirect_to(movies_path)
     end
-
+    
+    it "should update selected ratings" do 
+      get "/movies", params: {:sort => "title"}, session: {:sort => "release_date"}
+      # Update session here
+      expect(response).to render_template(:index)
+    end
     
     #CRUD
     it "should show a new movie page" do 

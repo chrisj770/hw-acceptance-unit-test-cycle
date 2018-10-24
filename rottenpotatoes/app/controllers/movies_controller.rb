@@ -70,7 +70,6 @@ class MoviesController < ApplicationController
     
     # Find movies that match the director (if info exists)
     @movies = @selected_movie.find_similar()
-    print(@movies)
     if @movies.nil?
       flash[:notice] = "'#{@selected_movie.title}' has no director info"
       redirect_to movies_path
